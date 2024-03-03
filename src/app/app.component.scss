@@ -1,11 +1,60 @@
-.mattContainer{
+.mattContainer {
     height: 100vh;
     z-index: 999;
 }
-.mattContainer{
+
+.mattContainer {
     background-color: white;
 }
 
-.menu{
+.sidenav {
+    width: 300px;
+}
+
+.logo-container {
+    min-height: 56px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.menu {
     cursor: pointer;
+}
+
+mat-drawer {
+    background-color: white;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+mat-toolbar,
+mat-toolbar-row {
+    min-height: 56px;
+    height: 56px;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+
+    li {
+        color: black;
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        mat-icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 }
