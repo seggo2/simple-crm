@@ -18,15 +18,21 @@ import {
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { User } from '../../models/user.class';
 
 
 @Component({
   selector: 'app-dialog-add-user',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule,MatDialogModule,MatDatepickerModule],
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule,MatDialogModule,MatDatepickerModule,],
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss'
 })
 export class DialogAddUserComponent {
 
+  user = new User();
+  save(){
+    console.log(this.user);
+    
+  }
 }
