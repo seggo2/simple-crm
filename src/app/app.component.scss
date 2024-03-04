@@ -1,6 +1,5 @@
 .mattContainer {
     height: 100vh;
-    z-index: 999;
 }
 
 .mattContainer {
@@ -54,7 +53,14 @@ mat-toolbar-row {
         }
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.04);
         }
+        
     }
+}
+
+.routerContainer{
+    padding-left: 56px;
+    padding-top: 16px;
+    color: black;
 }
