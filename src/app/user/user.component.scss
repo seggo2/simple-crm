@@ -3,3 +3,17 @@
     right: 56px;
     bottom: 56px;
 }
+
+.mat-mdc-card{
+    background-color: white;
+}
+
+.userTable{
+    width: 100%;
+    th{
+        color: rgb(0,0,0,0.4);
+        font-size: 16px;
+        font-weight: 600;
+        text-align: start;
+    }
+}

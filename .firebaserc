@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simplecrm-e50fe": {
+      "hosting": {
+        "simplecrm": [
+          "simplecrm-e50fe"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simplecrm-e50fe"
+  }
+}

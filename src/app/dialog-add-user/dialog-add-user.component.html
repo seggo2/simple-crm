@@ -1,47 +1,50 @@
-<h2 mat-dialog-title>Add user</h2>
-<mat-dialog-content>
-    <div>
-        <mat-form-field class="mr-16" appearance="outline">
-            <mat-label>First name</mat-label>
-            <input [(ngModel)]="user.firstName" ngDefaultControl matInput placeholder="Placeholder">
-        </mat-form-field>
+<div>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h2 mat-dialog-title>Add user</h2>
+    <mat-dialog-content>
+        <div>
+            <mat-form-field class="mr-16" appearance="outline">
+                <mat-label>First name</mat-label>
+                <input  [disabled]="loading"[(ngModel)]="user.firstName" ngDefaultControl matInput placeholder="Placeholder">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label >last name</mat-label>
-            <input [(ngModel)]="user.lastName" ngDefaultControl  matInput placeholder="Placeholder">
-        </mat-form-field>
-    </div>
+            <mat-form-field appearance="outline">
+                <mat-label>last name</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.lastName" ngDefaultControl matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
 
-    <div>
-        <mat-form-field class="Full-width" color="accent">
-            <mat-label>Birth date</mat-label>
-            <input [(ngModel)]="user.birtDate" ngDefaultControl matInput [matDatepicker]="picker2">
-            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2 color="primary"></mat-datepicker>
-        </mat-form-field>
-    </div>
+        <div>
+            <mat-form-field class="Full-width" color="accent">
+                <mat-label>Birth date</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.birtDate" ngDefaultControl matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+        </div>
 
-    <div>
-        <mat-form-field class="Full-width" appearance="outline">
-            <mat-label>Street + House No.</mat-label>
-            <input [(ngModel)]="user.street" ngDefaultControl matInput placeholder="Placeholder">
-        </mat-form-field>
-    </div>
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Street + House No.</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.street" ngDefaultControl matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
 
-    <div>
-        <mat-form-field class="mr-16" appearance="outline">
-            <mat-label>Zip code</mat-label>
-            <input [(ngModel)]="user.zipCode" ngDefaultControl matInput placeholder="Placeholder">
-        </mat-form-field>
+        <div>
+            <mat-form-field class="mr-16" appearance="outline">
+                <mat-label>Zip code</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.zipCode" ngDefaultControl matInput placeholder="Placeholder">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>City</mat-label>
-            <input [(ngModel)]="user.city" ngDefaultControl matInput placeholder="Placeholder">
-        </mat-form-field>
-    </div>
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.city" ngDefaultControl matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
 
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button>Cancel</button>
-    <button mat-button (click)="save()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
-</mat-dialog-actions>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button>Cancel</button>
+        <button mat-button (click)="save()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+</div>
