@@ -1,0 +1,48 @@
+.user-detail-header {
+    min-height: 250px;
+    background-color: #7b1fa2;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+}
+
+.userDetails {
+    height: 100px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.cardInfo {
+    padding-left: 23px;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    mat-card-content {
+        padding-left: 0;
+    }
+}
+
+.morePosition{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

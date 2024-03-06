@@ -1,0 +1,24 @@
+<mat-card class="user-detail-header">
+    <div>
+        <img src="assets/img/icon-1633249_640.png" alt="">
+    </div>
+    <div class="userDetails">
+        <h2>{{singleUser.firstName}} {{singleUser.lastName}}</h2>
+        {{singleUser.email}}
+    </div>
+</mat-card>
+
+<mat-card class="mt-32 , cardInfo">
+    <mat-card-title>
+        Address
+    </mat-card-title>
+    
+    <button mat-mini-fab color="primary" class="morePosition" (click)="openEditDialog()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+    <mat-card-content>
+        {{singleUser.street}}<br>
+        {{singleUser.city}}: {{singleUser.zipCode}}<br>
+    </mat-card-content>
+</mat-card>

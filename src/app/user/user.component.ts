@@ -1,4 +1,4 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -19,11 +19,12 @@ import { User } from '../../models/user.class';
 import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, onSnapshot, query, QueryDocumentSnapshot, DocumentData } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatCardModule,CommonModule],
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatCardModule, CommonModule,RouterLink],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
@@ -42,12 +43,9 @@ export class UserComponent {
   subUsers() {
     const q = query(this.getNoteRef());
     return onSnapshot(q, (snapshot) => {
-      this.allUsers=[];
+      this.allUsers = [];
       snapshot.forEach((element: QueryDocumentSnapshot<DocumentData>) => {
-        const data = element.data() as DocumentData;
-        if (data) {
-          this.allUsers.push(this.setNoteObject(data));
-        }
+        this.allUsers.push(this.setNoteObject(element.data(), element.id));
       });
     });
   }
@@ -56,13 +54,15 @@ export class UserComponent {
     return collection(this.firestore, 'user');
   }
 
-  setNoteObject(obj: any) {
+  setNoteObject(obj: any, id: string) {
     return {
+      id: id,
       firstName: obj.firstName || "",
       lastName: obj.lastName || "",
       birthDate: obj.birthDate || "",
+      email: obj.email || "",
       street: obj.street || "",
-      zipCode: obj.zipCode || 0, 
+      zipCode: obj.zipCode || 0,
       city: obj.city || "",
     };
   }

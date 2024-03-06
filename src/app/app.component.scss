@@ -12,13 +12,15 @@
 
 .logo-container {
     min-height: 56px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: white;
+    background-color: white;
     img{
         object-fit: cover;
+       
     }
 }
 
@@ -27,8 +29,12 @@
 }
 
 mat-drawer {
-    background-color: white;
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #7b1fa2;
+    border-right: 1px solid black;
+    box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.2);
+}
+mat-toolbar-row{
+gap: 50px;
 }
 
 mat-toolbar,
@@ -43,20 +49,22 @@ mat-toolbar-row {
     margin: 0px;
 
     li {
-        color: black;
+        color: white;
+        font-size: 20px;
         padding-left: 16px;
         padding-right: 16px;
-        height: 48px;
+        height: 80px;
         display: flex;
         align-items: center;
         cursor: pointer;
 
         mat-icon {
             margin-right: 16px;
+            height: 20px;
         }
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.04);
+            background-color: rgba(0, 0, 0, 0.12);
         }
         
     }

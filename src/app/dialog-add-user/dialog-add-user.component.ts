@@ -31,6 +31,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dialog-add-user.component.scss'
 })
 export class DialogAddUserComponent {
+  constructor(public dialog: MatDialog) {}
 
   loading = false;
   firestore: Firestore = inject(Firestore);
