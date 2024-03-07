@@ -4,13 +4,15 @@ import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user.class';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { EdditAdressDialogComponent } from '../eddit-adress-dialog/eddit-adress-dialog.component';
+import { EdditUserDialogComponent } from '../eddit-user-dialog/eddit-user-dialog.component';
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [MatCardModule,MatIconModule,MatDialogModule,MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatDialogModule, MatButtonModule, MatMenuModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })
@@ -19,7 +21,7 @@ export class UserDetailComponent {
   userId = "";
   singleUser: User = new User;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, public dialog: MatDialog) {
     this.ngOnInit();
   }
 
@@ -42,7 +44,17 @@ export class UserDetailComponent {
   }
 
 
-  openEditDialog(){
+  edditAdressDetail() {
+    let dialog = this.dialog.open(EdditAdressDialogComponent)
+    dialog.componentInstance.user = new User(this.singleUser.toJson())
+    dialog.componentInstance.userId =this.userId;
+
+  }
+
+  edditUserDetail() {
+    let dialog = this.dialog.open(EdditUserDialogComponent)
+    dialog.componentInstance.user =new User(this.singleUser.toJson())
+    dialog.componentInstance.userId =this.userId;
     
   }
 }

@@ -5,44 +5,34 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatDialog,} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { User } from '../../models/user.class';
 import { Firestore, collection, collectionData, doc, updateDoc, addDoc } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
-
+import { MatDialog, } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-dialog-add-user',
+  selector: 'app-eddit-user-dialog',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatDatepickerModule, MatProgressBarModule, CommonModule],
-  templateUrl: './dialog-add-user.component.html',
-  styleUrl: './dialog-add-user.component.scss'
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatDatepickerModule, MatProgressBarModule,],
+  templateUrl: './eddit-user-dialog.component.html',
+  styleUrl: './eddit-user-dialog.component.scss'
 })
-export class DialogAddUserComponent {
-  constructor(public dialog: MatDialog) {}
-
-  loading = false;
-  firestore: Firestore = inject(Firestore);
-  user = new User();
-
+export class EdditUserDialogComponent {
+  constructor(public dialog: MatDialog) { }
+  Firestore = inject(Firestore);
+  userId!: string;
+  user!: User;
 
 
   async save() {
-    this.loading = true;
-    await addDoc(this.getUserRef(), this.user.toJson()).catch(
-      (err) => { console.error(err) })
-    this.loading = false;
+   let Singledoc=this.getSingleDocRef('user', this.userId)
+   await updateDoc(Singledoc,this.user.toJson())
   }
 
   getSingleDocRef(colId: string, docId: string) {
-    return doc(collection(this.firestore, colId), docId)
-  }
-
-  getUserRef() {
-    return collection(this.firestore, 'user')
+    return doc(collection(this.Firestore, colId), docId)
   }
 }
-

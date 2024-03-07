@@ -1,4 +1,11 @@
 <mat-card class="user-detail-header">
+    <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu2">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu2="matMenu">
+        <button (click)="edditUserDetail()" mat-menu-item>Edit</button>
+      </mat-menu>
     <div>
         <img src="assets/img/icon-1633249_640.png" alt="">
     </div>
@@ -13,9 +20,14 @@
         Address
     </mat-card-title>
     
-    <button mat-mini-fab color="primary" class="morePosition" (click)="openEditDialog()">
+    <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
+
+      <mat-menu #menu="matMenu">
+        <button (click)="edditAdressDetail()" mat-menu-item>Edit</button>
+      </mat-menu>
+
 
     <mat-card-content>
         {{singleUser.street}}<br>
