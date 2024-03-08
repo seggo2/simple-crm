@@ -1,36 +1,45 @@
 <mat-card class="user-detail-header">
-    <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu2">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+  <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu2">
+    <mat-icon>more_vert</mat-icon>
+  </button>
 
-      <mat-menu #menu2="matMenu">
-        <button (click)="edditUserDetail()" mat-menu-item>Edit</button>
-      </mat-menu>
-    <div>
-        <img src="assets/img/icon-1633249_640.png" alt="">
-    </div>
-    <div class="userDetails">
-        <h2>{{singleUser.firstName}} {{singleUser.lastName}}</h2>
-        {{singleUser.email}}
-    </div>
+  <mat-menu #menu2="matMenu">
+    <button (click)="edditUserDetail()" mat-menu-item>Edit</button>
+  </mat-menu>
+  <div>
+    <img src="assets/img/icon-1633249_640.png" alt="">
+  </div>
+  <div class="userDetails">
+    <h2>{{singleUser.firstName}} {{singleUser.lastName}}</h2>
+    {{singleUser.email}}<br>
+    <div>{{singleUser.phoneNumber}}</div>
+  </div>
 </mat-card>
 
 <mat-card class="mt-32 , cardInfo">
-    <mat-card-title>
-        Address
-    </mat-card-title>
-    
-    <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+  <mat-card-title>
+    Information
+  </mat-card-title>
 
-      <mat-menu #menu="matMenu">
-        <button (click)="edditAdressDetail()" mat-menu-item>Edit</button>
-      </mat-menu>
+  <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button (click)="edditAdressDetail()" mat-menu-item>Edit</button>
+  </mat-menu>
 
 
-    <mat-card-content>
-        {{singleUser.street}}<br>
-        {{singleUser.city}}: {{singleUser.zipCode}}<br>
-    </mat-card-content>
+  <mat-card-content class="width100">
+    <div class="listingInfo">
+      <div><b>Street</b>: {{singleUser.street}}</div>
+      <div><b>City-postcode</b>: {{singleUser.city}}-{{singleUser.zipCode}}</div>
+      <div><b>Position</b>: {{singleUser.position}}</div>
+      <div><b>Work.Place</b>: {{singleUser.workPlace}}</div>
+      <div><b>Salary-Year</b>: {{singleUser.salaryYear}}€</div>
+      <div><b>Birth-Date</b>: {{dateConverter('issue')}}</div>
+      <div><b>Insurance-Number</b>: {{singleUser.insurance}}</div>
+      <div><b>Day-of-Issue</b>: {{dateConverter('birthday')}}</div>
+    </div>
+  </mat-card-content>
 </mat-card>

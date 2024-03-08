@@ -31,6 +31,7 @@ import { RouterLink } from '@angular/router';
 export class UserComponent {
   constructor(public dialog: MatDialog) {
     this.subUsers()
+
   }
   firestore: Firestore = inject(Firestore);
   user = new User();
@@ -48,6 +49,7 @@ export class UserComponent {
         this.allUsers.push(this.setNoteObject(element.data(), element.id));
       });
     });
+    
   }
 
   getNoteRef() {
@@ -64,6 +66,12 @@ export class UserComponent {
       street: obj.street || "",
       zipCode: obj.zipCode || 0,
       city: obj.city || "",
+      position: obj.position || "",
+      phoneNumber: obj.phoneNumber || "",
+      salaryYear: obj.salaryYear || 0,
+      insurance: obj.insurance || "",
+      workPlace: obj.workPlace || "",
+      dayIssue: obj.dayIssue || "",
     };
   }
 }

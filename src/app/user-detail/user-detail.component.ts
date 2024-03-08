@@ -21,6 +21,22 @@ export class UserDetailComponent {
   userId = "";
   singleUser: User = new User;
 
+  
+  
+  dateConverter(type: string ){
+    if(type=='birthday'){
+      let dateBirthday = new Date(+this.singleUser.birtDate);
+
+      return dateBirthday.toLocaleDateString()
+    }else if(type=='issue'){
+      let dateIssue = new Date(+this.singleUser.dayIssue);
+
+      return dateIssue.toLocaleDateString()
+    }
+  return ''
+  }
+
+
   constructor(private route: ActivatedRoute, public dialog: MatDialog) {
     this.ngOnInit();
   }
@@ -47,14 +63,14 @@ export class UserDetailComponent {
   edditAdressDetail() {
     let dialog = this.dialog.open(EdditAdressDialogComponent)
     dialog.componentInstance.user = new User(this.singleUser.toJson())
-    dialog.componentInstance.userId =this.userId;
+    dialog.componentInstance.userId = this.userId;
 
   }
 
   edditUserDetail() {
     let dialog = this.dialog.open(EdditUserDialogComponent)
-    dialog.componentInstance.user =new User(this.singleUser.toJson())
-    dialog.componentInstance.userId =this.userId;
-    
+    dialog.componentInstance.user = new User(this.singleUser.toJson())
+    dialog.componentInstance.userId = this.userId;
+
   }
 }

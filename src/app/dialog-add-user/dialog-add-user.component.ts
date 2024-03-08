@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatDialog,} from '@angular/material/dialog';
+import { MatDialog, } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,16 +22,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dialog-add-user.component.scss'
 })
 export class DialogAddUserComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   loading = false;
   firestore: Firestore = inject(Firestore);
   user = new User();
-
-
+  birthdate!:Date;
+  timeIssue!:Date;
 
   async save() {
     this.loading = true;
+    this.user.dayIssue=this.timeIssue.getTime();
+    this.user.birtDate=this.birthdate.getTime();
     await addDoc(this.getUserRef(), this.user.toJson()).catch(
       (err) => { console.error(err) })
     this.loading = false;

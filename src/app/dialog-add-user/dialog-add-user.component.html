@@ -16,18 +16,64 @@
 
         <div>
             <mat-form-field class="Full-width" color="accent">
-                <mat-label>date of issue</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user.birtDate" ngDefaultControl matInput [matDatepicker]="picker2">
+                <mat-label>date of Birthday</mat-label>
+                <input [disabled]="loading" [(ngModel)]="birthdate" ngDefaultControl matInput [matDatepicker]="picker2">
                 <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
             </mat-form-field>
         </div>
-
+        
+        <div>
+            <mat-form-field class="Full-width" color="accent">
+                <mat-label>date of issue</mat-label>
+                <input [disabled]="loading" [(ngModel)]="timeIssue" ngDefaultControl matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker color="primary"></mat-datepicker>
+            </mat-form-field>
+        </div>
         
         <div>
             <mat-form-field class="Full-width" color="accent">
                 <mat-label>E-Mail</mat-label>
                 <input [disabled]="loading" [(ngModel)]="user.email" ngDefaultControl matInput placeholder="E-Mail">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Work-position</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.position" ngDefaultControl matInput placeholder="position">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Salary-Year</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.salaryYear" ngDefaultControl matInput placeholder="Salary">
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Phone-number</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.phoneNumber" ngDefaultControl matInput placeholder="number">
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Insurrance-number</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.insurance" ngDefaultControl matInput placeholder="Insurrance">
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Work-Place</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.workPlace" ngDefaultControl matInput placeholder="workPlace">
             </mat-form-field>
         </div>
 

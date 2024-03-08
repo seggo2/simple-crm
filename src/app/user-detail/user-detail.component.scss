@@ -46,3 +46,13 @@
     top: 0;
     right: 0;
 }
+.listingInfo{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 15px;
+    div{
+        border-bottom: 2px solid bisque;
+    }
+}

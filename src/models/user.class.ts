@@ -1,5 +1,4 @@
 export class User {
-
     firstName: string;
     lastName: string;
     birtDate: number;
@@ -7,8 +6,12 @@ export class User {
     zipCode: number;
     city: string;
     email: string;
-
-
+    position: string
+    phoneNumber: number
+    salaryYear: number
+    insurance: number
+    workPlace: string
+    dayIssue: number
 
     constructor(obj?: any) {
         this.firstName = obj ? obj.firstName : '';
@@ -18,6 +21,13 @@ export class User {
         this.zipCode = obj ? obj.zipCode : '';
         this.city = obj ? obj.city : '';
         this.email = obj ? obj.email : '';
+        this.position = obj ? obj.position : '';
+        this.phoneNumber = obj ? obj.phoneNumber : '';
+        this.salaryYear = obj ? obj.salaryYear : '';
+        this.insurance = obj ? obj.insurance : '';
+        this.workPlace = obj ? obj.workPlace : '';
+        this.dayIssue = obj ? obj.dayIssue : '';
+
     }
 
     public toJson() {
@@ -29,6 +39,12 @@ export class User {
             zipCode: this.zipCode,
             city: this.city,
             email: this.email,
+            position: this.position,
+            phoneNumber: this.phoneNumber,
+            salaryYear: this.salaryYear,
+            insurance: this.insurance,
+            workPlace: this.workPlace,
+            dayIssue: this.dayIssue,
         };
     }
 }
