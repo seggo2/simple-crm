@@ -8,14 +8,16 @@ Chart.register(...registerables)
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatCardModule,CommonModule],
+  imports: [MatCardModule, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
   firestore: Firestore = inject(Firestore);
   allUsers!: any[];
-  lastmonthCompare!:string;
+  lastmonthCompare!: string;
+  totalWorkers!: number;
+
 
   constructor() {
   }
@@ -31,6 +33,7 @@ export class DashboardComponent {
       this.allUsers = [];
       snapshot.forEach((element: QueryDocumentSnapshot<DocumentData>) => {
         this.allUsers.push(this.setNoteObject(element.data(), element.id));
+        this.totalWorkers=this.allUsers.length;
       });
       this.drawChart()
     });
@@ -105,6 +108,6 @@ export class DashboardComponent {
     const lastMonthCount = resultArray[currentMonth - 1];
     const percentageDifference = ((currentMonthCount - lastMonthCount) / lastMonthCount) * 100;
     const resultString = (percentageDifference >= 0) ? `+ ${percentageDifference}%` : `${percentageDifference}%`;
-    this.lastmonthCompare=resultString;
+    this.lastmonthCompare = resultString;
   }
 }

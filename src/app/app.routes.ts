@@ -4,6 +4,7 @@ import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CampComponent } from './camp/camp.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
+import { CampDetailComponent } from './camp-detail/camp-detail.component';
 
 export const routes: Routes = [
     {path:'', component:DashboardComponent},
@@ -12,4 +13,5 @@ export const routes: Routes = [
     {path:'user/:id', component:UserDetailComponent},
     {path:'camp', component:CampComponent},
     {path:'assignments', component:AssignmentsComponent},
+    {path:'camp/:id', component:CampDetailComponent},
 ];

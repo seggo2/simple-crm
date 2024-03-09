@@ -19,7 +19,10 @@ import { Firestore, collection, onSnapshot, query, QueryDocumentSnapshot, Docume
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { camp } from '../../models/camp.class';
-import { DialogAddCampComponent } from '../dialog-add-camp/dialog-add-camp.component';
+import { DialogAddCampComponent } from '../dialogs/dialog-add-camp/dialog-add-camp.component';
+import { CampDetailComponent } from '../camp-detail/camp-detail.component';
+
+
 
 @Component({
   selector: 'app-camp',

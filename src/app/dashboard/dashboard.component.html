@@ -2,12 +2,22 @@
   <canvas id="myChart" width="300" height="100">
   </canvas>
 </div>
+<div class="position">
+  <div class="container">
+    <h2>Growth Compared to last Month</h2>
+    <mat-card class="cardSize">
+      <b
+        [ngClass]="{'positive': lastmonthCompare && lastmonthCompare.startsWith('+'), 'negative': lastmonthCompare && lastmonthCompare.startsWith('-')}">{{lastmonthCompare}}</b>
+      <img src="assets/img/trend-8258674_640.png" alt="">
+    </mat-card>
+  </div>
 
-<div class="container">
-  <h2>Growth Compared to last Month</h2>
-  <mat-card class="cardSize">
-    <b
-      [ngClass]="{'positive': lastmonthCompare && lastmonthCompare.startsWith('+'), 'negative': lastmonthCompare && lastmonthCompare.startsWith('-')}">{{lastmonthCompare}}</b>
-    <img src="assets/img/trend-8258674_640.png" alt="">
-  </mat-card>
+
+  <div class="container">
+    <h2>Number of Employes</h2>
+    <mat-card class="cardSize">
+      <b>{{totalWorkers}} Total</b>
+      <img src="assets/img/icon-1633250_640.png" alt="">
+    </mat-card>
+  </div>
 </div>

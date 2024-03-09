@@ -1,0 +1,30 @@
+<div class="center">
+    <mat-card class="user-detail-header">
+      <button mat-mini-fab color="primary" class="morePosition" [matMenuTriggerFor]="menu2">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+  
+      <mat-menu #menu2="matMenu">
+        <button (click)="edditUserDetail()" mat-menu-item>Edit</button>
+      </mat-menu>
+      <div class="imgContainer"> <img src="assets/img/icon-6985161_640.png" alt=""> </div>
+      <div class="userDetails">
+        <h2 id="h2">{{singleDeliever.supplier}}</h2>
+      </div>
+    </mat-card>
+  
+    <mat-card class="mt-32 , cardInfo">
+      <mat-card-title>
+        Information from Order
+      </mat-card-title>
+      <mat-card-content class="width100">
+        <div class="listingInfo">
+          <div><b>Weight</b>: {{singleDeliever.weight}}</div>
+          <div><b>Material composition</b>: {{singleDeliever.materialStandard}}</div>
+          <div><b>Number of Order </b>: {{singleDeliever.number}}</div>
+          <div><b>Cost</b>: {{singleDeliever.cost}}</div>
+          <div><b>Number of Rods</b>: {{singleDeliever.numberOfRods}}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>

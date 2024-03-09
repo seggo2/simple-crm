@@ -5,17 +5,37 @@
     font-size: 20px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
+    text-align: center;
+
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 17%;
+        height: 70px;
+        width: 100px;
+        object-fit: contain;
+    }
 }
-.container{
+
+.container {
     margin-top: 30px;
-    h2{
+
+    h2 {
         font-size: 18px;
     }
 }
+
 .positive {
     color: green;
 }
 
 .negative {
     color: red;
+}
+
+.position {
+    display: flex;
+    align-items: center;
+    gap: 150px;
 }

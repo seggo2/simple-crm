@@ -8,28 +8,28 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { User } from '../../models/user.class';
 import { Firestore, collection, collectionData, doc, updateDoc, addDoc, } from '@angular/fire/firestore';
-import { CommonModule } from '@angular/common';
 import { MatDialog, } from '@angular/material/dialog';
+import { camp } from '../../../models/camp.class';
+
 
 @Component({
-  selector: 'app-eddit-adress-dialog',
+  selector: 'app-eddit-camp-dialog',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatDatepickerModule, MatProgressBarModule,],
-  templateUrl: './eddit-adress-dialog.component.html',
-  styleUrl: './eddit-adress-dialog.component.scss'
+  templateUrl: './eddit-camp-dialog.component.html',
+  styleUrl: './eddit-camp-dialog.component.scss'
 })
-export class EdditAdressDialogComponent {
+export class EdditCampDialogComponent {
   constructor(public dialog: MatDialog) { }
   Firestore = inject(Firestore);
-  userId!: string;
-  user!: User;
+  campId!: string;
+  singleDeliever!: camp;
 
 
   async save() {
-   let Singledoc=this.getSingleDocRef('user', this.userId)
-   await updateDoc(Singledoc,this.user.toJson())
+   let Singledoc=this.getSingleDocRef('camp', this.campId)
+   await updateDoc(Singledoc,this.singleDeliever.toJson())
   }
 
   getSingleDocRef(colId: string, docId: string) {

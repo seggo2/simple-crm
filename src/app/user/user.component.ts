@@ -14,12 +14,12 @@ import {
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 import { User } from '../../models/user.class';
 import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, onSnapshot, query, QueryDocumentSnapshot, DocumentData } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { DialogAddUserComponent } from '../dialogs/dialog-add-user/dialog-add-user.component';
 
 @Component({
   selector: 'app-user',
@@ -28,13 +28,20 @@ import { RouterLink } from '@angular/router';
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
+
+
+
 export class UserComponent {
+
   constructor(public dialog: MatDialog) {
     this.subUsers()
   }
   firestore: Firestore = inject(Firestore);
   user = new User();
   allUsers: any[] = [];
+  filteredUsers: any[] = [];
+  searchTerm: string = '';
+
 
   openDialog() {
     this.dialog.open(DialogAddUserComponent)
@@ -52,7 +59,17 @@ export class UserComponent {
         const nameB = b.firstName.toLowerCase(); 
         return nameA.localeCompare(nameB);
       });
+      this.applySearchFilter();
     });
+  }
+
+
+  applySearchFilter() {
+    this.filteredUsers = this.allUsers.filter(user =>
+      user.firstName.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      user.lastName.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      user.position.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
   getNoteRef() {

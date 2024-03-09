@@ -1,0 +1,47 @@
+<div>
+    <h2 mat-dialog-title>Eddit user</h2>
+    <mat-dialog-content>
+        <div class="paddintTop">
+            <div>
+                <mat-form-field class="mr-16" appearance="outline">
+                    <mat-label>Number of Orders</mat-label>
+                    <input [(ngModel)]="singleDeliever.number" ngDefaultControl matInput placeholder="Street + House No.">
+                </mat-form-field>
+
+                <mat-form-field class="mr-16" appearance="outline">
+                    <mat-label>Material Standard</mat-label>
+                    <input [(ngModel)]="singleDeliever.materialStandard" ngDefaultControl matInput placeholder="Zip code">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="mr-16">
+                    <mat-label>item Number</mat-label>
+                    <input [(ngModel)]="singleDeliever.itemNumber" ngDefaultControl matInput placeholder="City">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="mr-16">
+                    <mat-label>Supplier</mat-label>
+                    <input [(ngModel)]="singleDeliever.supplier" ngDefaultControl matInput placeholder="City">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="mr-16">
+                    <mat-label>Number of Rods</mat-label>
+                    <input [(ngModel)]="singleDeliever.numberOfRods" ngDefaultControl matInput placeholder="City">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="mr-16">
+                    <mat-label>Cost</mat-label>
+                    <input [(ngModel)]="singleDeliever.cost" ngDefaultControl matInput placeholder="City">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="mr-16">
+                    <mat-label>Weight</mat-label>
+                    <input [(ngModel)]="singleDeliever.weight" ngDefaultControl matInput placeholder="City">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="">Cancel</button>
+        <button mat-button (click)="save()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+</div>

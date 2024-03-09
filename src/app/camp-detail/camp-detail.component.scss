@@ -1,0 +1,72 @@
+.user-detail-header {
+    min-height: 250px;
+    background-color: #7b1fa2;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 700px;
+    width: 700px;
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+}
+.imgContainer{
+    padding-left: 10px;
+}
+.userDetails {
+    height: 100px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 0;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+}
+
+.cardInfo {
+    padding-left: 23px;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: burlywood;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 700px;
+    width: 700px;
+
+    mat-card-content {
+        padding-left: 0;
+    }
+}
+
+.morePosition {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.listingInfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

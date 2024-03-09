@@ -11,25 +11,30 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Firestore, collection, collectionData, doc, updateDoc, addDoc } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
-import { camp } from '../../models/camp.class';
+import { User } from '../../../models/user.class';
+
 
 @Component({
-  selector: 'app-dialog-add-camp',
+  selector: 'app-dialog-add-user',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatDatepickerModule, MatProgressBarModule, CommonModule],
-  templateUrl: './dialog-add-camp.component.html',
-  styleUrl: './dialog-add-camp.component.scss'
+  templateUrl: './dialog-add-user.component.html',
+  styleUrl: './dialog-add-user.component.scss'
 })
-export class DialogAddCampComponent {
+export class DialogAddUserComponent {
   constructor(public dialog: MatDialog) { }
+
   loading = false;
   firestore: Firestore = inject(Firestore);
-  camp = new camp();
-
+  user = new User();
+  birthdate!:Date;
+  timeIssue!:Date;
 
   async save() {
     this.loading = true;
-    await addDoc(this.getUserRef(), this.camp.toJson()).catch(
+    this.user.dayIssue=this.timeIssue.getTime();
+    this.user.birtDate=this.birthdate.getTime();
+    await addDoc(this.getUserRef(), this.user.toJson()).catch(
       (err) => { console.error(err) })
     this.loading = false;
   }
@@ -39,6 +44,7 @@ export class DialogAddCampComponent {
   }
 
   getUserRef() {
-    return collection(this.firestore, 'camp')
+    return collection(this.firestore, 'user')
   }
 }
+

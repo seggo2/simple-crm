@@ -6,6 +6,7 @@
 
     <mat-menu #menu2="matMenu">
       <button (click)="edditUserDetail()" mat-menu-item>Edit</button>
+      <button (click)="deleteUser()" mat-menu-item>delete</button>
     </mat-menu>
     <div>
       <img src="assets/img/icon-1633249_640.png" alt="">
@@ -38,9 +39,9 @@
         <div><b>Position</b>: {{singleUser.position}}</div>
         <div><b>Work.Place</b>: {{singleUser.workPlace}}</div>
         <div><b>Salary-Year</b>: {{singleUser.salaryYear}}€</div>
-        <div><b>Birth-Date</b>: {{dateConverter('issue')}}</div>
+        <div><b>Birth-Date</b>: {{dateConverter('birthday')}}</div>
         <div><b>Insurance-Number</b>: {{singleUser.insurance}}</div>
-        <div><b>Day-of-Issue</b>: {{dateConverter('birthday')}}</div>
+        <div><b>Day-of-Issue</b>: {{dateConverter('issue')}}</div>
       </div>
     </mat-card-content>
   </mat-card>

@@ -1,11 +1,12 @@
+<div><input class="searchWork" type="text" placeholder="Search for Position Or Name" [(ngModel)]="searchTerm" (input)="applySearchFilter()"></div>
 <mat-card>
-   <table class="userTable">
+    <table class="userTable">
     <tr>
         <th>Name</th>
         <th>E-mail</th>
         <th>Position</th>
     </tr>
-    <tr *ngFor="let user of allUsers"[routerLink]="user.id" >
+    <tr *ngFor="let user of filteredUsers"[routerLink]="user.id" >
         <td>{{user.firstName}} {{user.lastName}}</td>
         <td>{{user.email}}</td>
         <td>{{user.position}}</td>
