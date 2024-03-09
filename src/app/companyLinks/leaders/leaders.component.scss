@@ -1,0 +1,145 @@
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.Leaders {
+    background-color: rgb(0, 0, 0, 0.18);
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    p {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #7b1fa2;
+    }
+
+    img {
+        height: 70px;
+        object-fit: contain;
+        width: 70px;
+    }
+}
+
+.centerOffice {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.office {
+    background-color: rgb(0, 0, 0, 0.18);
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    p {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #7b1fa2;
+    }
+
+    img {
+        height: 70px;
+        object-fit: contain;
+        width: 70px;
+    }
+}
+
+
+.centerHall {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cnchall {
+    background-color: rgb(0, 0, 0, 0.18);
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    p {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #7b1fa2;
+    }
+    img{
+        height: 70px;
+        object-fit: contain;
+        width: 70px;
+    }
+}
+
+.MaterialCamp {
+    background-color: rgb(0, 0, 0, 0.18);
+    height: 150px;
+    width: 550px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    p {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #7b1fa2;
+    }
+    img{
+        height: 170px;
+        object-fit: contain;
+        width: 170px; 
+    }
+}

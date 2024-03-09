@@ -33,7 +33,7 @@ export class DashboardComponent {
       this.allUsers = [];
       snapshot.forEach((element: QueryDocumentSnapshot<DocumentData>) => {
         this.allUsers.push(this.setNoteObject(element.data(), element.id));
-        this.totalWorkers=this.allUsers.length;
+        this.totalWorkers = this.allUsers.length;
       });
       this.drawChart()
     });
@@ -106,8 +106,13 @@ export class DashboardComponent {
     const currentMonth = currentDate.getMonth();
     const currentMonthCount = resultArray[currentMonth];
     const lastMonthCount = resultArray[currentMonth - 1];
-    const percentageDifference = ((currentMonthCount - lastMonthCount) / lastMonthCount) * 100;
-    const resultString = (percentageDifference >= 0) ? `+ ${percentageDifference}%` : `${percentageDifference}%`;
-    this.lastmonthCompare = resultString;
+    if (lastMonthCount !== null && lastMonthCount !== 0) {
+      const percentageDifference = ((currentMonthCount - lastMonthCount) / lastMonthCount) * 100;
+      const roundedPercentage = percentageDifference.toFixed(2);
+      const resultString = (percentageDifference >= 0) ? `+ ${roundedPercentage}%` : `${roundedPercentage}%`;
+      this.lastmonthCompare = resultString;
+    } else {
+      this.lastmonthCompare = 'no starts';
+    }
   }
 }
