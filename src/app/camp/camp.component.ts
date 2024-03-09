@@ -38,6 +38,8 @@ export class CampComponent {
   firestore: Firestore = inject(Firestore);
   camp = new camp();
   campSortiemnt: any[] = [];
+  filteredMaterial: any[] = [];
+  searchTerm: string = '';
 
   openDialog() {
     this.dialog.open(DialogAddCampComponent)
@@ -55,6 +57,7 @@ export class CampComponent {
         const nameB = b.supplier.toLowerCase(); 
         return nameA.localeCompare(nameB);
       });
+      this.applySearchFilter()
     });
   }
 
@@ -73,5 +76,11 @@ export class CampComponent {
       number: obj.number || 0,
       numberOfRods: obj.numberOfRods || 0,
     };
+  }
+
+  applySearchFilter() {
+    this.filteredMaterial = this.campSortiemnt.filter(camp =>
+      camp.materialStandard.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 }

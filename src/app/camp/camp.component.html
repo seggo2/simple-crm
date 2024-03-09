@@ -1,3 +1,4 @@
+<div><input class="searchWork" type="text" placeholder="Search for Material name" [(ngModel)]="searchTerm" (input)="applySearchFilter()"></div>
 <mat-card>
     <table class="userTable">
      <tr>
@@ -5,10 +6,10 @@
          <th>Number Rods</th>
          <th>Cost</th>
      </tr>
-     <tr *ngFor="let camp of campSortiemnt"[routerLink]="camp.id" >
+     <tr *ngFor="let camp of filteredMaterial"[routerLink]="camp.id" >
          <td>{{camp.supplier}}</td>
          <td>{{camp.numberOfRods}}</td>
-         <td>{{camp.cost}}</td>
+         <td>{{camp.materialStandard}}</td>
      </tr>
     </table>
  </mat-card>
