@@ -14,68 +14,61 @@ import {
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
-import { User } from '../../models/user.class';
 import { MatCardModule } from '@angular/material/card';
 import { Firestore, collection, onSnapshot, query, QueryDocumentSnapshot, DocumentData } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { camp } from '../../models/camp.class';
+import { DialogAddCampComponent } from '../dialog-add-camp/dialog-add-camp.component';
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-camp',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatCardModule, CommonModule,RouterLink],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.scss'
+  templateUrl: './camp.component.html',
+  styleUrl: './camp.component.scss'
 })
-export class UserComponent {
+export class CampComponent {
   constructor(public dialog: MatDialog) {
     this.subUsers()
   }
   firestore: Firestore = inject(Firestore);
-  user = new User();
-  allUsers: any[] = [];
+  camp = new camp();
+  campSortiemnt: any[] = [];
 
   openDialog() {
-    this.dialog.open(DialogAddUserComponent)
+    this.dialog.open(DialogAddCampComponent)
   }
 
   subUsers() {
     const q = query(this.getNoteRef());
     return onSnapshot(q, (snapshot) => {
-      this.allUsers = [];
+      this.campSortiemnt = [];
       snapshot.forEach((element: QueryDocumentSnapshot<DocumentData>) => {
-        this.allUsers.push(this.setNoteObject(element.data(), element.id));
+        this.campSortiemnt.push(this.setNoteObject(element.data(), element.id));
       });
-      this.allUsers.sort((a, b) => {
-        const nameA = a.firstName.toLowerCase(); 
-        const nameB = b.firstName.toLowerCase(); 
+      this.campSortiemnt.sort((a, b) => {
+        const nameA = a.supplier.toLowerCase(); 
+        const nameB = b.supplier.toLowerCase(); 
         return nameA.localeCompare(nameB);
       });
     });
   }
 
   getNoteRef() {
-    return collection(this.firestore, 'user');
+    return collection(this.firestore, 'camp');
   }
 
   setNoteObject(obj: any, id: string) {
     return {
       id: id,
-      firstName: obj.firstName || "",
-      lastName: obj.lastName || "",
-      birthDate: obj.birthDate || "",
-      email: obj.email || "",
-      street: obj.street || "",
-      zipCode: obj.zipCode || 0,
-      city: obj.city || "",
-      position: obj.position || "",
-      phoneNumber: obj.phoneNumber || "",
-      salaryYear: obj.salaryYear || 0,
-      insurance: obj.insurance || "",
-      workPlace: obj.workPlace || "",
-      dayIssue: obj.dayIssue || "",
+      itemNumber: obj.itemNumber || "",
+      supplier: obj.supplier || "",
+      materialStandard: obj.materialStandard || "",
+      cost: obj.cost || 0,
+      weight: obj.weight || 0,
+      number: obj.number || 0,
+      numberOfRods: obj.numberOfRods || 0,
     };
   }
 }
-

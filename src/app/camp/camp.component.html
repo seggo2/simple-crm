@@ -1,0 +1,18 @@
+<mat-card>
+    <table class="userTable">
+     <tr>
+         <th>Company</th>
+         <th>Number Rods</th>
+         <th>Cost</th>
+     </tr>
+     <tr *ngFor="let camp of campSortiemnt"[routerLink]="camp.id" >
+         <td>{{camp.supplier}}</td>
+         <td>{{camp.numberOfRods}}</td>
+         <td>{{camp.cost}}</td>
+     </tr>
+    </table>
+ </mat-card>
+ 
+ <button (click)="openDialog()" class="buttonPosition" mat-mini-fab color="primary" matTooltip="Add user">
+     <mat-icon>add</mat-icon>
+ </button>

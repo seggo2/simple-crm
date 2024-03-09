@@ -1,19 +1,21 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit, ElementRef, ViewChild, inject, ChangeDetectorRef } from '@angular/core';
 import { DocumentData, Firestore, QueryDocumentSnapshot, collection, onSnapshot, query } from '@angular/fire/firestore';
+import { MatCardModule } from '@angular/material/card';
 import { Chart, registerables } from 'chart.js';
+import { CommonModule } from '@angular/common';
 Chart.register(...registerables)
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule,CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
   firestore: Firestore = inject(Firestore);
   allUsers!: any[];
-lastMonthCompare:any;
+  lastmonthCompare!:string;
 
   constructor() {
   }
@@ -68,6 +70,8 @@ lastMonthCompare:any;
         datasets: [{
           label: ' New Coworkers of year 2024',
           data: resultArray,
+          borderColor: '#0000',
+          backgroundColor: '#7b1fa2',
           borderWidth: 1
         }]
       },
@@ -90,19 +94,17 @@ lastMonthCompare:any;
         resultArray[month]++;
       }
     });
-    this.lastMonthCompare=this.compareCurrentAndLastMonth(resultArray);
+    this.compareCurrentAndLastMonth(resultArray);
     return resultArray;
   }
 
-  async compareCurrentAndLastMonth(resultArray:any) {
+  async compareCurrentAndLastMonth(resultArray: any) {
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth();
     const currentMonthCount = resultArray[currentMonth];
-    const lastMonthCount =resultArray[currentMonth-1];
-    if (lastMonthCount === 0) {
-      return 0;
-    }
+    const lastMonthCount = resultArray[currentMonth - 1];
     const percentageDifference = ((currentMonthCount - lastMonthCount) / lastMonthCount) * 100;
-    return percentageDifference;
+    const resultString = (percentageDifference >= 0) ? `+ ${percentageDifference}%` : `${percentageDifference}%`;
+    this.lastmonthCompare=resultString;
   }
 }

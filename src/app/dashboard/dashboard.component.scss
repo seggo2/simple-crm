@@ -1,0 +1,21 @@
+.cardSize {
+    height: 100px;
+    width: 150px;
+    background-color: burlywood;
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container{
+    margin-top: 30px;
+    h2{
+        font-size: 18px;
+    }
+}
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}

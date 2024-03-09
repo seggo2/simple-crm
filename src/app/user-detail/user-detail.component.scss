@@ -6,7 +6,9 @@
     justify-content: flex-start;
     align-items: flex-end;
     flex-direction: row;
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 700px;
+    width: 700px;
 
     img {
         height: 100px;
@@ -35,24 +37,34 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    background-color: burlywood;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 700px;
+    width: 700px;
 
     mat-card-content {
         padding-left: 0;
     }
 }
 
-.morePosition{
+.morePosition {
     position: absolute;
     top: 0;
     right: 0;
 }
-.listingInfo{
+
+.listingInfo {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     font-size: 15px;
-    div{
-        border-bottom: 2px solid bisque;
-    }
+
+}
+
+.center {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
 }

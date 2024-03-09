@@ -1,0 +1,59 @@
+<div class="width">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h2 mat-dialog-title>Add Material</h2>
+    <mat-dialog-content>
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Company</mat-label>
+                <input  [disabled]="loading"[(ngModel)]="camp.supplier" ngDefaultControl matInput placeholder="Company">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field class="Full-width" color="accent">
+                <mat-label>Item number</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.itemNumber" ngDefaultControl matInput placeholder="Item number">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Weight</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.weight" ngDefaultControl matInput placeholder="Weight">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Material Number</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.materialStandard" ngDefaultControl matInput placeholder="Material Number">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>cost</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.cost" ngDefaultControl matInput placeholder="cost">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Number of Order</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.number" ngDefaultControl matInput placeholder="Number of Order">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="Full-width" appearance="outline">
+                <mat-label>Number Of Rods</mat-label>
+                <input [disabled]="loading" [(ngModel)]="camp.numberOfRods" ngDefaultControl matInput placeholder="Number Of Rods">
+            </mat-form-field>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="">Cancel</button>
+        <button mat-button (click)="save()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+</div>

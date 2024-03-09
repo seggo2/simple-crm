@@ -1,0 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: bisque;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #7b1fa2;
+  }
+
+
+  .width{
+    width: 500px;
+  }
