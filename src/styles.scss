@@ -26,3 +26,17 @@ body {
 .mat-drawer-content{
     background-color: bisque;
 }
+
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+  }
