@@ -72,3 +72,13 @@ mat-card {
     width: 200px;
     height: 20px;
 }
+
+@media(max-width:750px){
+    .userTable{
+        font-size: 14px !important;
+        th{
+            font-size: 12px;
+        }
+    }
+   
+}

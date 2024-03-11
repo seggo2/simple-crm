@@ -68,3 +68,12 @@
 
     flex-direction: column;
 }
+
+@media(max-width:1010px){
+   .user-detail-header{
+    width: 350px;
+   }
+   .cardInfo{
+    width: 350px;
+   }
+}

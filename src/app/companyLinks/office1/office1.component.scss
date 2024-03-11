@@ -44,6 +44,11 @@
     align-items: center;
     gap: 70px;
 }
+.leading{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
 
 h1{
     font-size: 35px;
@@ -82,5 +87,16 @@ h1{
         height: 200px;
         object-fit: contain;
         width: 300px;
+    }
+}
+@media(max-width:1300px){
+    .bigPosition{
+    flex-direction: column;
+    }
+ }
+
+ @media(max-width:750px){
+    .position{
+    flex-direction: column;
     }
 }

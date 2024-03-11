@@ -68,3 +68,13 @@ h2 {
     width: 100px;
     height: 170px;
 }
+
+@media(max-width:1450px){
+    .positionGroups{
+        display: flex;
+    flex-direction: column-reverse;
+    }
+    .cnchall{
+        width: 300px;
+    }
+ }

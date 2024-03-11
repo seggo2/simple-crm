@@ -6,7 +6,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialog, } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Firestore, collection, collectionData, doc, updateDoc, addDoc } from '@angular/fire/firestore';
@@ -28,11 +28,16 @@ export class DialogAddCampComponent {
   camp = new camp();
 
 
-  async save() {
-    this.loading = true;
-    await addDoc(this.getUserRef(), this.camp.toJson()).catch(
-      (err) => { console.error(err) })
-    this.loading = false;
+  async save(userForm: NgForm) {
+    if (userForm.submitted && userForm.form.valid) {
+      this.loading = true;
+      await addDoc(this.getUserRef(), this.camp.toJson()).catch(
+        (err) => { console.error(err) })
+      this.loading = false;
+      this.dialog.closeAll();
+    } else {
+      console.log('false');
+    }
   }
 
   getSingleDocRef(colId: string, docId: string) {

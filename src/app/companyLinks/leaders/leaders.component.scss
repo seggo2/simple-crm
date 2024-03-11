@@ -6,10 +6,12 @@
     flex-direction: column;
     gap: 50px;
 }
-h1{
+
+h1 {
     font-size: 40px;
 }
-.secretary{
+
+.secretary {
     margin-top: 100px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -134,10 +136,12 @@ h1{
         font-weight: 500;
         color: white;
     }
+
     h2 {
         font-size: 25px;
         text-align: center;
     }
+
     img {
         height: 200px;
         object-fit: contain;
@@ -181,4 +185,64 @@ h1{
 .position {
     display: flex;
     align-items: center;
+}
+
+
+
+@media(max-width:1200px) {
+    .position {
+        display: flex;
+        flex-direction: column;
+    }
+    .centerHall{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:750px) {
+   .Leaders{
+    flex-direction: column;
+    margin-right: 0px;
+    p {
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: start;
+        font-size: 12px;
+        color: white;
+    }
+
+    h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    img {
+        height: 200px;
+        object-fit: contain;
+        width: 200px;
+    }
+   }
+
+   .secretary{
+    flex-direction: column;
+    p {
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: start;
+        font-size: 12px;
+        color: white;
+    }
+
+    h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    img {
+        height: 200px;
+        object-fit: contain;
+        width: 200px;
+    }
+   }
 }

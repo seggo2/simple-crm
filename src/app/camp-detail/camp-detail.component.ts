@@ -49,4 +49,16 @@ export class CampDetailComponent {
     dialog.componentInstance.singleDeliever = new camp(this.singleDeliever.toJson())
     dialog.componentInstance.campId = this.campId;
   }
+
+  
+  async deleteUser(){
+    const userRef =this.getSingleDocRef('camp', this.campId);;
+     try {
+       await deleteDoc(userRef);
+       this.router.navigate(['/camp']);
+       console.log('Benutzer erfolgreich gelöscht:', this.campId);
+     } catch (error) {
+       console.error('Fehler beim Löschen des Benutzers:', error);
+     }
+   }
 }

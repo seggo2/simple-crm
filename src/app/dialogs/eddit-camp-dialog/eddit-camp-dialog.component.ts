@@ -28,6 +28,7 @@ export class EdditCampDialogComponent {
 
 
   async save() {
+    debugger
    let Singledoc=this.getSingleDocRef('camp', this.campId)
    await updateDoc(Singledoc,this.singleDeliever.toJson())
   }

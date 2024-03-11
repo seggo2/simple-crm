@@ -38,7 +38,11 @@
     width: 100px;
     height: 300px;
 }
-
+.leading{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
 .position{
     display: flex;
     align-items: center;
@@ -84,3 +88,15 @@ h1{
         width: 300px;
     }
 }
+
+@media(max-width:1300px){
+    .bigPosition{
+    flex-direction: column;
+    }
+ }
+
+ @media(max-width:750px){
+    .position{
+    flex-direction: column;
+    }
+ }

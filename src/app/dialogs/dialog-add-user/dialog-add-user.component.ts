@@ -6,7 +6,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialog, } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Firestore, collection, collectionData, doc, updateDoc, addDoc } from '@angular/fire/firestore';
@@ -27,16 +27,22 @@ export class DialogAddUserComponent {
   loading = false;
   firestore: Firestore = inject(Firestore);
   user = new User();
-  birthdate!:Date;
-  timeIssue!:Date;
+  birthdate!: Date;
+  timeIssue!: Date;
 
-  async save() {
-    this.loading = true;
-    this.user.dayIssue=this.timeIssue.getTime();
-    this.user.birtDate=this.birthdate.getTime();
-    await addDoc(this.getUserRef(), this.user.toJson()).catch(
-      (err) => { console.error(err) })
-    this.loading = false;
+  async save(userForm: NgForm) {
+    if (userForm.submitted && userForm.form.valid) {
+      this.loading = true;
+      this.user.dayIssue = this.timeIssue.getTime();
+      this.user.birtDate = this.birthdate.getTime();
+      await addDoc(this.getUserRef(), this.user.toJson()).catch(
+        (err) => { console.error(err) })
+      this.loading = false;
+      this.dialog.closeAll();
+    } else {
+      console.log('false');
+
+    }
   }
 
   getSingleDocRef(colId: string, docId: string) {
