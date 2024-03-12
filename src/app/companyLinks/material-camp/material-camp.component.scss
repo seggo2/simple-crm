@@ -34,6 +34,7 @@ h2 {
     width: 400px;
     height: 400px;
     margin-bottom: 20px;
+
     p {
         text-align: start;
         font-size: 15px;
@@ -56,10 +57,11 @@ h2 {
 
 
 .cnc1 {
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 10px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -68,16 +70,18 @@ h2 {
     margin-top: 30px;
     width: 100px;
     height: 700px;
-    p{
+
+    p {
         text-align: center;
     }
 }
 
 .cnc2 {
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 10px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -88,14 +92,14 @@ h2 {
     height: 700px;
 }
 
-.position{
+.position {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 
-.ending{
+.ending {
     font-size: 17px;
     display: flex;
     justify-content: center;
@@ -107,5 +111,80 @@ h2 {
     padding-right: 10px;
     margin-top: 30px;
     height: 100px;
-    width:100%;
+    width: 100%;
+}
+
+.Text {
+    font-size: 15px;
+    color: white;
+    width: 400px;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid #7b1fa2;
+}
+
+@media(max-width:1200px) {
+    .cnchall {
+        width: 300px;
+    }
+
+    .Text {
+        width: 200px;
+    }
+
+    .dpf {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:950px) {
+    .cnchall {
+        width: 200px;
+    }
+
+    .Text {
+        width: 200px;
+    }
+
+    .dpf {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cnc1 {
+        width: 50px;
+    }
+    .cnc2 {
+        width: 50px;
+    }
+}
+
+@media(max-width:400px) {
+    .cnchall {
+        width: 150px;
+    }
+
+    .Text {
+        width: 150px;
+    }
+
+    .dpf {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cnc1 {
+        width: 40px;
+    }
+    .cnc2 {
+        width: 40px;
+    }
 }

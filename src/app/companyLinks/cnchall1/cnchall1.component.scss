@@ -65,10 +65,20 @@ h2 {
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 100px;
+    width: 80px;
     height: 170px;
+    font-size: 12px;
+    text-align: center;
 }
-
+.Text{
+    font-size: 15px;
+    color: white;
+    width: 400px;
+    background-color: black;
+    padding:5px;
+    border-radius: 10px;
+    border: 3px solid #7b1fa2;
+}
 
 @media(max-width:1450px){
     .positionGroups{
@@ -76,8 +86,16 @@ h2 {
     flex-direction: column-reverse;
     }
     .cnchall{
-        width: 300px;
+        width: 200px;
+    }
+    .dpf{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Text{
+        width: 200px;
     }
  }
-
 

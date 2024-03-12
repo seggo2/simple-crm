@@ -144,7 +144,15 @@
     }
 }
 
-
+@media(max-width:900px){
+    .MaterialCamp{
+     width: 350px;
+    }
+    .cnchall{
+        width: 100px;
+        height: 200px;
+    }
+ }
 
 @media(max-width:550px){
     .MaterialCamp{
@@ -152,6 +160,10 @@
     }
     .centerHall{
      flex-direction: column;
+    }
+    .cnchall{
+        width: 200px;
+        height: 150px;
     }
  }
 

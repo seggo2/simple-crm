@@ -1,8 +1,9 @@
 .büro1{
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 100px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -12,10 +13,11 @@
     height: 300px;
 }
 .büro2{
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 100px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -26,10 +28,11 @@
 }
 
 .büro3{
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 100px;
     background-color: rgb(0, 0, 0, 0.18);
     border-radius: 10px;
@@ -46,6 +49,7 @@
 .position{
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 70px;
 }
 
@@ -88,7 +92,20 @@ h1{
         width: 300px;
     }
 }
-
+.Text{
+    font-size: 15px;
+    color: white;
+    width: 400px;
+    background-color: black;
+    padding:5px;
+    border-radius: 10px;
+    border: 3px solid #7b1fa2;
+}
+.forward{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
 @media(max-width:1300px){
     .bigPosition{
     flex-direction: column;
@@ -98,5 +115,11 @@ h1{
  @media(max-width:750px){
     .position{
     flex-direction: column;
+    }
+    .forward{
+        flex-direction: column;
+    }
+    .Text{
+        width: 200px;
     }
  }

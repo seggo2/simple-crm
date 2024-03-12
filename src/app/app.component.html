@@ -5,10 +5,10 @@
     </div>
     <mat-icon class="menu , menuSmall" (click)="drawer.toggle()">menu</mat-icon>
     <ul class="list">
-      <li [routerLink]="['/']"><mat-icon>fact_check</mat-icon>Dashboard</li>
-      <li [routerLink]="['/user']"><mat-icon>perm_identity</mat-icon>Employee-Roster</li>
-      <li [routerLink]="['/assignments']"><mat-icon>question_answer</mat-icon>Map</li>
-      <li [routerLink]="['/camp']"><mat-icon>holiday_village </mat-icon>Material-Camp</li>
+      <li (click)="innerWidth && drawer.toggle()" [routerLink]="['/']"><mat-icon>fact_check</mat-icon>Dashboard</li>
+      <li (click)="innerWidth && drawer.toggle()" [routerLink]="['/user']"><mat-icon>perm_identity</mat-icon>Employee-Roster</li>
+      <li (click)="innerWidth && drawer.toggle()" [routerLink]="['/assignments']"><mat-icon>question_answer</mat-icon>Map</li>
+      <li (click)="innerWidth && drawer.toggle()" [routerLink]="['/camp']"><mat-icon>holiday_village </mat-icon>Material-Camp</li>
     </ul>
   </mat-drawer>
   <div class="example-sidenav-content">
