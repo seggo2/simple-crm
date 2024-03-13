@@ -2,6 +2,7 @@
     min-height: 250px;
     background-color: #7b1fa2;
     color: white;
+    text-transform: uppercase;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -9,17 +10,18 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     max-width: 700px;
     width: 700px;
+    border-radius: 10px;
+    border: 1px solid white;
 
     img {
-        height: 100px;
-        width: 100px;
+        padding: 5px;
+        height: 90px;
+        width: 90px;
         object-fit: cover;
         border-radius: 100%;
     }
 }
-.imgContainer{
-    padding-left: 10px;
-}
+
 .userDetails {
     height: 100px;
     margin-left: 32px;
@@ -30,15 +32,15 @@
 
     h2 {
         margin-bottom: 0;
-        font-size: 25px;
-        text-transform: uppercase;
     }
 }
 
 .cardInfo {
+    text-transform: uppercase;
     padding-left: 23px;
     background-color: white;
     display: flex;
+    border-radius: 10px;
     align-items: flex-start;
     justify-content: center;
     background-color: burlywood;
@@ -51,18 +53,26 @@
     }
 }
 
+.buttondown {
+    background-color: white;
+}
+
 .morePosition {
     position: absolute;
     top: 0;
     right: 0;
 }
 
+
 .listingInfo {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    font-size: 20px;
+    font-size: 17px;
+    b {
+        margin-right: 10px;
+    }
 }
 
 .center {
@@ -71,12 +81,12 @@
     flex-direction: column;
 }
 
+@media(max-width:1010px) {
+    .user-detail-header {
+        width: 350px;
+    }
 
-@media(max-width:1010px){
-    .user-detail-header{
-     width: 350px;
+    .cardInfo {
+        width: 350px;
     }
-    .cardInfo{
-     width: 350px;
-    }
- }
+}
